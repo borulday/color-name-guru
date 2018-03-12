@@ -1,0 +1,29 @@
+{
+  "name": "color-name-guru",
+  "version": "0.1.0",
+  "description": "🎨",
+  "author": {
+    "name": "M.Gökây Borulday"
+  },
+  "scripts": {
+    "start": "zem start",
+    "build": "zem build",
+    "clean": "zem clean",
+    "exec": "zem exec"
+  },
+  "zeplin": {
+    "displayName": "Color Name Guru",
+    "projectTypes": [
+      "web",
+      "ios",
+      "osx",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "change-case": "^3.0.2",
+    "color-name-list": "^3.10.0",
+    "nearest-color": "^0.4.2",
+    "zem": "^0.1.2"
+  }
+}
