@@ -4,6 +4,19 @@
  */
 
 var SPACE = 2
+var messageKingdom = [
+    "🕺 Holly dance!", 
+    "💃 Holly dance!", 
+    "🤩 What a name!", 
+    "🎸 You rock!", 
+    "🤘 You rock!", 
+    "🎳 Strike!", 
+    "🙌 Perfect name!", 
+    "🥇 Golden medal!", 
+    "🎯 Hit the Bull's eye",
+    "👆 That works!",
+    "🧠 Brilliant choice!"
+];
 
 import namedColors from 'color-name-list';
 import nearestColor from 'nearest-color';
@@ -21,7 +34,8 @@ function styleguideColors(context, colors) {
 }
 
 function comment(context, text) {
-    return "// Color Name Suggestions";
+    return '// Color Name Suggestions\n' +
+           '// No need to change if name suggestion starts with an emoji';
 }
 
 export default {
@@ -43,7 +57,7 @@ function alternateColor(projectType, color) {
 
     let suggestion = "";
     if ( alternateColorName.toLowerCase() == color.name.toLowerCase() ) { 
-        suggestion = "Already perfect! 🥇";
+        suggestion = messageKingdom[Math.floor(Math.random() * messageKingdom.length)];
     } else {
         switch (projectType) {
             case "ios":
