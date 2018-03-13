@@ -1,6 +1,11 @@
 # Color Name Guru 🎨 - Zeplin Extension ⚗️
 Color Name Guru gives color name suggestions for your iOS, OSX, Web and Android projects. 
 
+Default color name formats for project types:
+iOS and OSX: `camelCase`
+Web: `kebab-case`
+Android: `snake_case`
+
 ### Sample Output 📤
 ```json
 [

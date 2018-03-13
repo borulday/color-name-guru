@@ -3,8 +3,8 @@
  * https://github.com/zeplin/zeplin-extension-documentation
  */
 
-var SPACE = 2
-var messageKingdom = [
+const SPACE = 2;
+const messageKingdom = [
     "🕺 Holly dance!", 
     "💃 Holly dance!", 
     "🤩 What a name!", 
@@ -23,7 +23,7 @@ import nearestColor from 'nearest-color';
 import changeCase from 'change-case';
 
 function styleguideColors(context, colors) {
-    var alternateColors = colors.map(function(color) {
+    const alternateColors = colors.map(function(color) {
         return alternateColor(context.project.type, color);
     });
 
@@ -38,22 +38,23 @@ function comment(context, text) {
            '// No need to change if name suggestion starts with an emoji';
 }
 
-export default {
-    styleguideColors,
-    comment
-};
-
+/**
+ * Suggest an alternate color
+ * @param {String} projectType project type on Zeplin
+ * @param {Object} color current color information
+ * @returns {Object} 
+ */
 function alternateColor(projectType, color) {
-    let colors = {};
+    const colors = {};
 
     namedColors.forEach(namedColor => {
         colors[namedColor.name] = namedColor.hex;
     });
 
-    let nearestColorInformation = nearestColor.from(colors);
+    const nearestColorInformation = nearestColor.from(colors);
     
-    let alternateColor = nearestColorInformation({ r: color.r, g: color.g, b: color.b });
-    let alternateColorName = alternateColor.name + (color.a == 1 ? "" : color.a * 100);
+    const alternateColor = nearestColorInformation({ r: color.r, g: color.g, b: color.b });
+    const alternateColorName = alternateColor.name + (color.a == 1 ? "" : color.a * 100);
 
     let suggestion = "";
     if ( alternateColorName.toLowerCase() == color.name.toLowerCase() ) { 
@@ -83,3 +84,8 @@ function alternateColor(projectType, color) {
         suggestion: suggestion
     };
 }
+
+export default {
+    styleguideColors,
+    comment
+};
