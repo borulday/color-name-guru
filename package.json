@@ -1,9 +1,9 @@
 {
   "name": "color-name-guru",
   "version": "0.1.0",
-  "description": "🎨",
+  "description": "Color Name Guru gives color name suggestions for your iOS, OSX, Web and Android projects.",
   "author": {
-    "name": "M.Gökây Borulday"
+    "name": "M.Gökay Borulday"
   },
   "scripts": {
     "start": "zem start",
