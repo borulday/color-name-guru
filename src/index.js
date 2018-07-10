@@ -57,27 +57,27 @@ function alternateColor(projectType, color) {
     const alternateColorName = alternateColor.name + (color.a == 1 ? "" : color.a * 100);
 
     let suggestion = "";
-    if ( alternateColorName.toLowerCase() == color.name.toLowerCase() ) { 
-        suggestion = messageKingdom[Math.floor(Math.random() * messageKingdom.length)];
-    } else {
-        switch (projectType) {
-            case "ios":
-            case "osx":
-                suggestion = changeCase.camelCase(alternateColorName);
-                break;
+    switch (projectType) {
+        case "ios":
+        case "osx":
+            suggestion = changeCase.camelCase(alternateColorName);
+            break;
 
-            case "web":
-                suggestion = changeCase.paramCase(alternateColorName);
-                break;
+        case "web":
+            suggestion = changeCase.paramCase(alternateColorName);
+            break;
 
-            case "android":
-                suggestion = changeCase.snakeCase(alternateColorName);
-                break;
+        case "android":
+            suggestion = changeCase.snakeCase(alternateColorName);
+            break;
 
-            default:
-                suggestion = "";
-        }
+        default:
+            suggestion = "";
     }
+
+    if (suggestion == color.name) { 
+        suggestion = messageKingdom[Math.floor(Math.random() * messageKingdom.length)];
+    } 
 
     return {
         current: color.name,
