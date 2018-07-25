@@ -3,6 +3,12 @@
  * https://github.com/zeplin/zeplin-extension-documentation
  */
 
+ /**
+  * TODOs: 
+  * - Add color name presentation options (camelCase, snake_case...etc)
+  * 
+  */
+
 const SPACE = 2;
 const messageKingdom = [
     "🕺 Holly dance!", 
@@ -54,7 +60,7 @@ function alternateColor(projectType, color) {
     const nearestColorInformation = nearestColor.from(colors);
     
     const alternateColor = nearestColorInformation({ r: color.r, g: color.g, b: color.b });
-    const alternateColorName = alternateColor.name + (color.a == 1 ? "" : color.a * 100);
+    const alternateColorName = alternateColor.name + (color.a == 1 ? "" : parseInt(color.a * 100));
 
     let suggestion = "";
     switch (projectType) {
@@ -75,9 +81,9 @@ function alternateColor(projectType, color) {
             suggestion = "";
     }
 
-    if (suggestion == color.name) { 
+    if (suggestion.toLowerCase() == color.name.toLowerCase()) { 
         suggestion = messageKingdom[Math.floor(Math.random() * messageKingdom.length)];
-    } 
+    }
 
     return {
         current: color.name,
