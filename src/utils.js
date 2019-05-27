@@ -36,6 +36,11 @@ function alternateColor(containerType, color) {
 
     let suggestion = "";
     switch (containerType) {
+        case "base":
+            // TODO: Add as an option.
+            suggestion = changeCase.camelCase(alternateColorName);
+            break;
+
         case "ios":
         case "osx":
             suggestion = changeCase.camelCase(alternateColorName);

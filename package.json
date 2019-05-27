@@ -1,6 +1,6 @@
 {
   "name": "color-name-guru",
-  "version": "0.2",
+  "version": "0.2.1",
   "description": "Color name suggestions for your iOS, OSX, Web and Android projects.",
   "author": {
     "name": "M.Gökay Borulday"
@@ -9,7 +9,9 @@
     "start": "zem start",
     "build": "zem build",
     "clean": "zem clean",
-    "exec": "zem exec"
+    "exec": "zem exec",
+    "build:test": "zem build --dev",
+    "publish": "zem publish"
   },
   "zeplin": {
     "displayName": "Color Name Guru",
@@ -19,17 +21,20 @@
       "osx",
       "android"
     ],
-    "options": [{
-      "name": "Display resources from linked and parent styleguides",
-      "type": "switch",
-      "id": "useLinkedStyleguides",
-      "default": true
-    }]
+    "options": [
+      {
+        "name": "Display resources from linked and parent styleguides",
+        "type": "switch",
+        "id": "useLinkedStyleguides",
+        "default": true
+      }
+    ]
   },
   "dependencies": {
-    "change-case": "^3.0.2",
-    "color-name-list": "^3.10.0",
-    "nearest-color": "^0.4.2",
-    "zem": "^0.1.2"
+    "change-case": "^3.1.0",
+    "color-name-list": "^4.7.1",
+    "nearest-color": "^0.4.4",
+    "npm": "^6.9.0",
+    "zem": "^0.4.3"
   }
 }
